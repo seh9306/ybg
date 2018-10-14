@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="euc-kr">
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0">
+<style>
+body {font-size:12px; color:#777; line-height:17px;}
+p,body {padding:0; margin:0;}
+#e120504 {width:960px; margin:0 auto;}
+#e120504 #stamp {width:960px; color:#000; font-size:14px; position:relative; clear:both;}
+#e120504 #stamp .txt_name {position:absolute; left:698px; top:19px;}
+#e120504 #stamp .num_1 {position:absolute; display:block; left:700px; top:76px; width:115px; line-height:34px; text-align:center;}
+#e120504 #stamp .num_2 {position:absolute; display:block; left:822px; top:76px; width:115px; line-height:34px; text-align:center;}
+#e120504 #stamp span {display:none; position:absolute; width:96px; height:92px;}
+#e120504 #stamp span img {width:96px; height:92px;}
+#e120504 #stamp .ly_1 {}
+#e120504 .tab {width:960px; height:126px;}
+</style>
+<script src="jq.js"></script>
+<script>
+$(function(){
+	$("#e120504 #stamp .btn").click(function(e){
+		$("."+$(this).attr("name")).fadeIn(700);		
+		var num_1 = $("#e120504 #stamp .num_1").text();
+		if(num_1 > 0){
+			num_1--;
+			$("#e120504 #stamp .num_1").text(num_1);		 
+		}			
+		e.preventDefault();	
+	});
+
+});			
+</script>
+</head>
+<body>
+<div id="e120504">	
+	<div id="stamp">
+		<p><img src="img_main.jpg" alt="" usemap="#e120504_2"></p>	
+		<span class="ly_1"><img src="stamp_1.gif" alt=""></span>
+
+		<map name="e120504_2">
+			<area shape="rect" class="btn" name="ly_1" coords="107,99,168,150" href="#" >
+				
+		</map>
+	</div>
+	
+	<div class="tab">
+	
+		<map name="e120504_tab">
+			<area shape="rect" name="tab_1" coords="18,60,171,111" href="#" onFocus="blur()">
+		</map>	
+	</div>
+
+
+</body>
+</html>

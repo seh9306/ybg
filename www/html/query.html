@@ -1,0 +1,43 @@
+
+<!doctype html>
+	<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<script src="jquery-2.1.1.min.js"></script>
+	<script>		
+	</script>
+ </head>
+ <body>
+ <?php
+require_once('C:\Program Files\Apache Software Foundation\Apache2.2\db.php');
+
+	if(!empty($_POST['add']))
+	{
+		for($i=0;$i<$_POST['add'];$i++){
+			$query="insert into success values('','n','n','n','n','n','n','n','n','n','n','n','n','n','n')";
+			dbconn($query);
+			echo $_POST['add']."개 조 추가";
+		}
+	}
+	if(!empty($_POST['del1'])&&!empty($_POST['del2']))
+	{
+			$query = "delete from success limit ".$_POST[del1].", ".($_POST['del2']-$_POST['del1']+1);
+			dbconn($query);
+			echo $query;
+			echo $_POST['del1']."~".$_POST['del2']."조 삭제";
+	}
+		
+?>
+	<form method='post' action=''>
+		<input name='add' type='text' value='추가 조 입력'>
+		<input name='del1' type='text' value='삭제할 조 시작'>
+		~
+		<input name='del2' type='text' value='삭제할 조 끝'>
+		<input type='submit'>
+	</form>
+ </body>
+</html>

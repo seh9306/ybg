@@ -1,0 +1,96 @@
+<?php
+	require_once('../db.php');
+?>
+<!doctype html>
+	<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0">  
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<script src="jquery-2.1.1.min.js"></script>
+	<script>
+	/*
+		screen.width  screen.height => device screen 
+
+	*/
+	</script>
+	<style>
+	@font-face{
+		font-family:'heum';
+		src:local(""),url("/fonts/HUBubb.ttf");
+		}
+
+		.btn { overflow:hidden; background:#f6f6f6; margin:10px; padding:10px; border: 10px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal;}
+		.btn:hover { background:#d9d9d9; }
+
+		body { margin: 0px; font-family:heum; width:100%; height:100%; }
+		body div#header { background:#e9e9e9; overflow:hidden; height:100%; }
+		body div#header button.btn { float:left; width:10%; margin:auto; }
+		body div#header img#back { float:left; width:5%; height:5%; }
+		body div#header div img#main { width:65%; }
+		body div#header > * { margin:0px; font-size:12px; }
+		body div#body { position:relative; }
+		body div#body p.btn { font-size:20px; }
+		
+		.fireclass { background:rgba(255,0,0,.5); position:absolute; padding:2px 10px; border:solid black 1px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal; }
+		.homeclass { background:rgba(255,255,0,.5); position:absolute; padding:2px 10px; border:solid black 1px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal; }
+		.soolclass { background:rgba(0,255,255,.5); position:absolute; padding:2px 10px; border:solid black 1px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal; }
+		.soolclass2 { background:rgba(255,0,255,.5); position:absolute; padding:2px 10px; border:solid black 1px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal; }
+
+		.fire { left:30%; top:12%;}
+		.mopp { left:40%; top:30%; }
+		.cpr  { left:53%; top:22%; }
+
+		.tree { left:6%; top:20%; }
+		.city { left:15%; top:38%; }
+		.gum  { left:19%; top:47.5%; }
+		.find { left:41%; top:54%; }
+
+		.bomb { left:18%; top:75%; }
+//		.gunfire { left:43%; top:33em; }
+//		.chemical { left:57%; top:31em; }
+//		.huddle { left:67%; top:29em; }
+//		.bombfire { left:70%; top:27em; }
+//		.patient { left:70%; top:24.2em; }
+
+		.bomb2 { left:67%; top:14.3%; }
+//		.gunfire2 { left:72%; top:20em; }
+//		.chemical2 { left:75%; top:17em; }
+//		.huddle2 { left:80%; top:14.3em; }
+//		.bombfire2 { left:85%; top:12em; }
+//		.patient2 { left:85%; top:9em; }
+
+		.firetitle { left:0%; top:40%; }
+		.sool { left:25%; top:40%; }
+		.sool2 { left:50%; top:40%; }
+		.home { left:75%; top:40%; }
+		body div#body img { width:100%; }
+		body div#body p { width:25%; height:5%; overflow:hidden; font-size:100%; } 
+		body div#body a { width:25%; height:5%; font-size:100%; background:rgba(200,255,255,.5); position:absolute; padding:2px 10px; border:solid black 1px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal; text-decoration:none; color:black; } 
+</style>
+</head>
+<body>
+		<div id='header'>
+			<div align='center'><img src='main.png' id='main'></div>
+		</div>
+		<div id='body' align='center'>
+			<p class='fireclass fire'>사격: <?php echo dbconnc('사격','w'); ?></p>
+			<p class='fireclass mopp'>mopp: <?php echo dbconnc('mopp','w'); ?></p>
+			<p class='fireclass cpr'>구급법: <?php echo dbconnc('구급법','w'); ?></p>
+
+			<p class='soolclass bomb'>전술1: <?php echo dbconnc('적포탄낙하시','w'); ?></p>
+
+			<p class='soolclass2 bomb2'>전술2: <?php echo dbconnc('적포탄낙하시2','w'); ?></p>
+
+			<p class='homeclass tree'>목진지: <?php echo dbconnc('목진지전투','w'); ?></p>
+			<p class='homeclass city'>시가지: <?php echo dbconnc('시가지전투','w'); ?></p>			
+			<p class='homeclass gum'>검문소: <?php echo dbconnc('검문소','w'); ?></p>
+			<p class='homeclass find'>수색: <?php echo dbconnc('수색','w'); ?></p>
+			<a href="#">새로고침</a>
+			<img src="map.png">
+		</div>
+	</body>
+</html>

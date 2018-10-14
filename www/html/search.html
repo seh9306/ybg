@@ -1,0 +1,89 @@
+<?php
+	require_once('display_all.php');
+?>
+	
+
+	<!doctype html>
+	<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0">  
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<script src="jquery-2.1.1.min.js"></script>
+	<style>
+	@font-face{
+		font-family:'heum';
+		src:local(""),url("/fonts/HUBubb.ttf");
+		}
+
+		.btn { overflow:hidden; background:#f6f6f6; margin:10px; padding:2%; border: 10px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal;}
+		.btn:hover { background:#d9d9d9; }
+		/* 페이지 전체 화면의 100% */
+
+		html,body { margin: 0px; width:100%; height:100%; }
+
+		/* 바디 100% */
+		body div#body { position:relative; height:100%; }
+		body div#body p.btn { height:10%; }
+
+
+
+		/* 조회하기를 위한 스타일 */
+		.fireclass { background:rgba(255,0,0,.5); position:absolute; padding:2px 10px; border:solid black 1px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal; }
+		.homeclass { background:rgba(255,255,0,.5); position:absolute; padding:2px 10px; border:solid black 1px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal; }
+		.soolclass { background:rgba(0,255,255,.5); position:absolute; padding:2px 10px; border:solid black 1px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal; }
+		.soolclass2 { background:rgba(255,0,255,.5); position:absolute; padding:2px 10px; border:solid black 1px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal; }
+
+		.fire { left:30%; top:12%;}
+		.mopp { left:40%; top:30%; }
+		.cpr  { left:53%; top:21%; }
+
+		.tree { left:6%; top:20%; }
+		.city { left:15%; top:38%; }
+		.gum  { left:19%; top:47.5%; }
+		.find { left:41%; top:54%; }
+
+		.bomb { left:18%; top:75%; }
+
+		.bomb2 { left:70%; top:13%; }
+
+		.firetitle { left:0%; top:40%; }
+		.sool { left:25%; top:40%; }
+		.sool2 { left:50%; top:40%; }
+		.home { left:75%; top:40%; }
+		body div#body img { height:100%; width:100%; } /* 픽셀은 화면 크기에 고정적이다*/
+		body div#body p { width:20%; height:7%; font-size:30px; } 
+		body div#body a { width:20%; height:8%; font-size:30px; background:rgba(200,255,255,.5); position:absolute; padding:2px 10px; border:solid black 1px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,.15); cursor:pointer; font-style:normal; text-decoration:none; color:black; } 
+		body div#search { position:absolute; background:rgba(255,255,255,.85); width:20%; height:20%; top:40%; left:40%; border-radius:20px; display:none; } 
+		/* 조회하기를 위한 스타일 END */
+
+	</style>
+	<title>조회하기</title>
+
+</head>
+	<body>
+		<div id='body' align='center'>	
+			<p class='fireclass fire'>사격: <?php echo dbconnc('사격','w'); ?></p>
+			<p class='fireclass mopp'>mopp: <?php echo dbconnc('mopp','w'); ?></p>
+			<p class='fireclass cpr'>구급법: <?php echo dbconnc('구급법','w'); ?></p>
+
+			<p class='soolclass bomb'>전술Ⅰ: <?php echo dbconnc('적포탄낙하시','w'); ?></p>
+
+			<p class='soolclass2 bomb2'>전술Ⅱ: <?php echo dbconnc('적포탄낙하시2','w'); ?></p>
+
+			<p class='homeclass tree'>목진지: <?php echo dbconnc('목진지전투','w'); ?></p>
+			<p class='homeclass city'>시가지: <?php echo dbconnc('시가지전투','w'); ?></p>			
+			<p class='homeclass gum'>검문소: <?php echo dbconnc('검문소','w'); ?></p>
+			<p class='homeclass find'>수색: <?php echo dbconnc('수색','w'); ?></p>
+			<a href="search_all.html" style="top:10%;">상세조회</a>
+			<a href="index.html">뒤로가기</a>
+			<img src="map.png">
+			<div id='search'>
+			</div>
+		</div>
+
+	</body>
+</html>
